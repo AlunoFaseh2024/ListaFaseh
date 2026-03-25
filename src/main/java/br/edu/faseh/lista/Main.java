@@ -12,10 +12,27 @@ public class Main {
 
         System.out.println(myList);
 
-        myList.removeAtBeginning();
+        Node<Integer> val = myList.removeAtBeginning();
 
         System.out.println(myList);
 
         System.out.println();
+
+        System.out.println("Inserting data at the end");
+
+        myList.insertAtTheEnd(2026);
+
+        System.out.println(myList);
+
+        System.out.println("\nA PARTIR DAQUI, O TERROR:");
+
+        System.out.println("último Node: ");
+        System.out.println(myList.seeTheLast());
+
+        System.out.println("\nLista com item inserido a partir do último Node:");
+        myList.lastNodeInsert(3030);
+
+        System.out.println(myList);
+
     }
 }
