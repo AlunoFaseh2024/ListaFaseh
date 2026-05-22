@@ -34,5 +34,26 @@ public class Main {
 
         System.out.println(myList);
 
+        // Novos métodos
+        // Inserindo elementos no fim
+        myList.inserirNoFim(10);
+        myList.inserirNoFim(20);
+        myList.inserirNoFim(30);
+        myList.inserirNoFim(40);
+
+        System.out.println("Lista após inserir 10, 20, 30, 40:");
+        System.out.println(myList);
+
+        // Removendo elemento pela chave/valor
+        myList.removerElemento(2026);
+
+        System.out.println("\nLista após remover 2026:");
+        System.out.println(myList);
+
+        // Removendo outro elemento
+        myList.removerElemento(3030);
+
+        System.out.println("\nLista após remover 3030:");
+        System.out.println(myList);
     }
 }

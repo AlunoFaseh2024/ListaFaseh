@@ -92,6 +92,50 @@ public class FasehList<T> {
     }
 
     // Design the other list methods.
-//    Insert at the end, in order, remove at the end,
-//    remove elements by value, search an element.
+    // Insert at the end, in order, remove at the end,
+    // remove elements by value, search an element.
+
+    public void inserirNoFim(T value) {
+        Node<T> newNode = getNewNode(value);
+
+        if (firstNode == null) {
+            firstNode = newNode;
+        } else {
+            Node<T> aux = firstNode;
+
+            while (aux.getNext() != null) {
+                aux = aux.getNext();
+            }
+
+            aux.setNext(newNode);
+        }
+
+        totalElements++;
+    }
+
+    public void removerElemento(T chave) {
+        if (firstNode == null) {
+            return;
+        }
+
+        if (firstNode.getValue().equals(chave)) {
+            firstNode = firstNode.getNext();
+            totalElements--;
+            return;
+        }
+
+        Node<T> anterior = firstNode;
+        Node<T> atual = firstNode.getNext();
+
+        while (atual != null) {
+            if (atual.getValue().equals(chave)) {
+                anterior.setNext(atual.getNext());
+                totalElements--;
+                return;
+            }
+
+            anterior = atual;
+            atual = atual.getNext();
+        }
+    }
 }
